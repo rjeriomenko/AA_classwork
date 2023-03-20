@@ -1,9 +1,5 @@
 # require "byebug"
 
-
-# Extend the Array class to include a method named `my_each` that takes a block,
-# calls the block on every element of the array, and returns the original array.
-
 class Array
     def my_each(&prc)
         i = 0
@@ -50,7 +46,7 @@ class Array
         true
     end
 
-    def my_flatten
+    def my_flatten ######------------------------------COME BACK
         return [self] if !self.is_a?(Array)
     end 
 
@@ -68,7 +64,7 @@ class Array
         arr 
     end 
 
-    def my_rotate(rotations=1)  #abcd => dabc if -1
+    def my_rotate(rotations=1)
         # debugger
         if rotations < 0
             rotations *= -1
@@ -85,12 +81,47 @@ class Array
 
         self
     end
-     
+
+    # a = [ "a", "b", "c", "d" ]    #---DO NOT RUN EACH TEST BACK TO BACK
+    # p a.my_rotate         #=> ["b", "c", "d", "a"]
+    # p a.my_rotate(2)      #=> ["c", "d", "a", "b"]
+    # p a.my_rotate(-3)     #=> ["b", "c", "d", "a"]
+    # p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
+
+    def my_join(between_char="")
+     string = ""
+
+     self.my_each do |char|
+        string << char
+        string << between_char
+     end
+
+     string
+    end
+
+    def my_reverse
+        arr = []
+
+        self.my_each do |ele|
+            arr.unshift(ele)
+        end
+
+        arr
+    end
+
 end
 
-a = [ "a", "b", "c", "d" ]    #---DO NOT RUN EACH TEST BACK TO BACK
-p a.my_rotate         #=> ["b", "c", "d", "a"]
-p a.my_rotate(2)      #=> ["c", "d", "a", "b"]
-p a.my_rotate(-3)     #=> ["b", "c", "d", "a"]
-p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
+p [ "a", "b", "c" ].my_reverse   #=> ["c", "b", "a"]
+p [ 1 ].my_reverse               #=> [1]
+
+
+Now that you're all warmed up, let's review the [iteration
+exercises][prep-iter-exercises] from the prepwork. Implement the following
+methods:
+
+* `#factors(num)`
+* `#bubble_sort!(&prc)`
+* `#bubble_sort(&prc)`
+* `#substrings(string)`
+* `#subwords(word, dictionary)`
 
