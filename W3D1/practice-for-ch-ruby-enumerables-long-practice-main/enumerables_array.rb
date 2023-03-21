@@ -111,17 +111,13 @@ class Array
 
 end
 
-p [ "a", "b", "c" ].my_reverse   #=> ["c", "b", "a"]
-p [ 1 ].my_reverse               #=> [1]
+# Now that you're all warmed up, let's review the [iteration
+# exercises][prep-iter-exercises] from the prepwork. Implement the following
+# methods:
 
-
-Now that you're all warmed up, let's review the [iteration
-exercises][prep-iter-exercises] from the prepwork. Implement the following
-methods:
-
-* `#factors(num)`
-* `#bubble_sort!(&prc)`
-* `#bubble_sort(&prc)`
-* `#substrings(string)`
-* `#subwords(word, dictionary)`
+# * `#factors(num)`
+# * `#bubble_sort!(&prc)`
+# * `#bubble_sort(&prc)`
+# * `#substrings(string)`
+# * `#subwords(word, dictionary)`
 
